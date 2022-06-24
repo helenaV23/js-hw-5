@@ -30,25 +30,23 @@ switch (mathOperation) {
         for (let i = 0; i < operand.length; i++) {
             result *= +operand[i];
         }
-        alert(`Результат: ${result}`);
         break;  
     case "+":
         for (let i = 0; i < operand.length; i++) {
             result += +operand[i];
         }
-        alert(`Результат: ${result}`);
         break;
     case "-":
         for (let i = 0; i < operand.length; i++) {
             result = +operand[0] - +operand[i]; 
         }
-        alert(`Результат: ${result}`);
         break;
     case "/":
         result = operand[0];
         for (let i = 1; i < operand.length; i++) {
             result /= operand[i]; 
         }
-        alert(`Результат: ${result}`);
         break;
 }
+
+alert(`Результат: ${result}`);
