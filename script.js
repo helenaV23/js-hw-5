@@ -6,11 +6,12 @@
 
 // 4) С помощью alert или console.log выводим финальный результат действия (+ - / *).
 
+debugger;
+
 let operations = ["+", "-", "/", "*"];
 let mathOperation;
 let operandsCount;
 let operand = [];
-let result = 0;
 
 do {
     mathOperation = prompt(`Що ви хочете зробити? Напишіть "${operations.join('", "')}"`);
@@ -24,29 +25,23 @@ for (let i = 0; i < operandsCount; i++) {
     operand[i] = prompt(`Введіть значення операнда ${i + 1}`);
 }
 
-switch (mathOperation) {
-    case "*":
-        result = 1;
-        for (let i = 0; i < operand.length; i++) {
+let result = +operand[0];
+
+for (let i = 1; i < operand.length; i++) {
+    switch (mathOperation) {
+        case "*": 
             result *= +operand[i];
-        }
-        break;  
-    case "+":
-        for (let i = 0; i < operand.length; i++) {
+            break;  
+        case "+":
             result += +operand[i];
-        }
-        break;
-    case "-":
-        for (let i = 0; i < operand.length; i++) {
-            result = +operand[0] - +operand[i]; 
-        }
-        break;
-    case "/":
-        result = operand[0];
-        for (let i = 1; i < operand.length; i++) {
+            break;
+        case "-":
+            result -= +operand[i]; 
+            break;
+        case "/":
             result /= operand[i]; 
-        }
-        break;
+            break;
+    }
 }
 
 alert(`Результат: ${result}`);
